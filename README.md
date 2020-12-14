@@ -1,2 +1,2 @@
 # CompetitiveProgramming
- All of my practice/competition source codes
+ All of my CP practice/competition source codes
