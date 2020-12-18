@@ -1,3 +1,9 @@
+/*
+ * This program is correct but it will not pass the test cases of CodeChef
+ * because, max value of n can be 100 and 100! is close to 9.3e157 which cannot
+ * be stored even in an unsigned 64 bit integer. The only possible way to solve this problem
+ * is with python which can store such large numbers.
+ */
 #include<bits/stdc++.h>
 
 using namespace std;
