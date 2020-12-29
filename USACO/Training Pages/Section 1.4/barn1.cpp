@@ -24,7 +24,7 @@ int main() {
     sort(a, a+c);
     vector<int> b;
     for(int i = 1; i < c; ++i) {
-        b.push_back(a[i] - a[i - 1] - 1);
+        b.push_back(a[i] - a[i - 1] - 1); //appends the distance between two consecutive stalls to the vector
     }
     auto comp = [=](int a, int b) {
         return a > b;
@@ -35,5 +35,10 @@ int main() {
     for(int i = 0; i < res; ++i) {
         ans -= b[i];
     }
+	/*
+	 * 			The distances are sorted in descending order and is subtracted from the distance between the first and the last stall.
+	 * 			The more we subtract from the total distance the more minimum the answer becomes. This is why we sort the vector in descending
+	 * 			order
+	 */
     cout << ans << "\n";
 }
