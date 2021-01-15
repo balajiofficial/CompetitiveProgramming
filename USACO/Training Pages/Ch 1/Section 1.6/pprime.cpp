@@ -25,7 +25,46 @@ int main() {
 }
 
 /*
-Code for prime palindromes generation - 
+Code for prime palindromes generation (MARK I) - 
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+
+bool not_prime[(int)1e8+1];
+
+bool pal(int c) {
+	string d = to_string(c);
+	string e = d;
+	reverse(d.begin(), d.end());
+	return d == e;
+}
+
+void ok() {
+	for(int i = 5; i <= 1e8; ++i) {
+		if (!not_prime[i]&&pal(i)) {
+			cout << i << ", ";
+		}
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	for(int i = 2; i <= 1e8; ++i) {
+		if (not_prime[i] == 0) {
+			for(int j = 2; j * i <= 1e8; ++j) {
+				not_prime[i * j] = 1;
+			}
+		}
+	}
+	ok();
+}
+*/
+
+/*
+Code for prime palindromes generation (MARK II) - 
 #include<bits/stdc++.h>
 
 using namespace std;
