@@ -46,6 +46,5 @@ int main() {
 	insert(&root, 12);
 	printInOrder(root);
 	cout << "\n";
-	// Here's a shorter version of the whole document -> set<type> name i.e. 'set<int> a' is a set called ' a ' which consists of integers in a sorted order.
-	// The set data structure in c++ is actually a binary search tree
+	// The 'set' data structure in c++ is a binary search tree
 }
