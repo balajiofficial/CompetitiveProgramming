@@ -7,30 +7,19 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	int n, k, a[100];
+	int n, k, a[1000];
 	cin >> n >> k;
-	for(int i= 0; i < n; ++i) {
+	for(int i = 0; i < n; ++i) {
 		cin >> a[i];
 	}
-	int ans =0, res = 0;
+	int ans = 0, s = 0;
 	for(int i = 0; i < n; ++i) {
-		if (a[i] > 8) {
-			ans += 8;
-			res += a[i] - 8;
-		} else {
-			if (a[i] == 8) {
-				ans += 8;
-			} else {
-				ans += min(8, a[i] + res);
-				if (8 < a[i] + res) {
-					res -= 8- a[i];
-				} else {
-					res = 0;
-				}
-			}
-		}
-		if (ans >=  k) {
-			cout << i + 1<< "\n";
+		s += a[i];
+		int e = min(8, s);
+		k -= e;
+		s -= e;
+		if (k <= 0) {
+			cout << i+1 << "\n";
 			return 0;
 		}
 	}
