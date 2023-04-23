@@ -85,6 +85,17 @@ public:
         }
         return ans;
     }
+
+    bool containsNode(int val) {
+        Node* curr = head;
+        while(curr != nullptr) {
+            if (curr->value == val) {
+                return true;
+            }
+            curr = curr->next;
+        }
+        return false;
+    }
 };
 
 int main() {
@@ -104,4 +115,5 @@ int main() {
     ll.reverse();
     ll.printInOrder();
     cout << ll.length() << "\n";
+    cout << ll.containsNode(138) << "\n";
 }
