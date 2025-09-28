@@ -9,41 +9,35 @@ int main() {
     cin.tie(0);
 
     string s;
-    int a[26];
-    for (int i = 0; i < 26; i++) a[i] = 0;
-
     cin >> s;
+    int a[26];
+    memset(a, 0, sizeof(a));
 
-    for (char c: s) {
-        a[(c - 'A')]++;
-    }
-    
+    for (char c : s) a[(c - 'A')]++;
+
     int n = 0;
-    for (int i: a) {
-        if (i&1) n++;
-    }
-    
-    if (n>1) {
-        cout << "NO SOLUTION" << "\n";
+    for (int i: a) n += i%2;
+
+    if (n > 1) {
+        cout << "NO SOLUTION\n";
         return 0;
     }
 
-    string lh = "";
+    string l = "";
     string m = "";
     for (int i = 0; i < 26; i++) {
-        while(a[i]) {
+        while (a[i]) {
             if (a[i]&1) {
-                m += (char)(i+'A');
+                m = char(i+'A');
                 a[i] -= 1;
                 continue;
             }
-            lh += (char)(i + 'A');
+            l += char(i+'A');
             a[i] -= 2;
         }
     }
-
-    string ans = lh + m;
-    reverse(lh.begin(), lh.end());
-    ans += lh;
+    string ans = l + m;
+    reverse(l.begin(), l.end());
+    ans += l;
     cout << ans << "\n";
 }
